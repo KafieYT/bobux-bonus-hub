@@ -1,68 +1,226 @@
-# Welcome to your Lovable project
+# Gamba - Plateforme de Jeux et Bonus
 
-## Project info
+Plateforme complète de jeux de casino en ligne avec système de points, giveaways, classements et administration.
 
-**URL**: https://lovable.dev/projects/02c2bae6-7b39-4860-99fd-6dc83a370773
+## 🎮 Fonctionnalités Principales
 
-## How can I edit this code?
+### Pages Publiques
 
-There are several ways of editing your application.
+#### 🏠 Accueil (`/`)
+- Section héro avec les meilleurs bonus du moment
+- Présentation des fonctionnalités principales (Blackjack, Plinko, Boutique, Bonus Hunt)
+- Affichage des bonus exclusifs
+- Liens vers les réseaux sociaux et la communauté
 
-**Use Lovable**
+#### 🎰 Jeux (`/games`)
+Plateforme de mini-jeux avec système de mise et de points :
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/02c2bae6-7b39-4860-99fd-6dc83a370773) and start prompting.
+- **Blackjack** (`/games/blackjack`)
+  - Jeu de blackjack classique contre le croupier
+  - Toutes les options classiques (Hit, Stand, Double, Split)
+  - Historique des parties
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Plinko** (`/games/plinko`)
+  - Lancez la bille et gagnez selon le multiplicateur
+  - Choix du niveau de risque
+  - Mode auto disponible
 
-**Use your preferred IDE**
+- **Pile ou Face** (`/games/coinflip`)
+  - Choisissez Pile ou Face et tentez votre chance
+  - Bouton aléatoire disponible
+  - Cotes : 60% serveur / 40% joueur
+  - Images personnalisées pour Pile (Cheval) et Face (Lapin)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Limbo** (`/games/limbo`)
+  - Prédisez un multiplicateur cible
+  - Le résultat doit être égal ou supérieur pour gagner
+  - Probabilités calculées : 2x = 49% de chance, 1000x = 0.099% de chance
+  - Résultat instantané avec animation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Pierre-Feuille-Ciseaux** (`/games/rockpaperscissors`)
+  - 1v1 contre l'ordinateur
+  - Multiplicateur fixe x2.00 pour les victoires
+  - Rejouer automatiquement en cas d'égalité
+  - Cotes : 55% serveur / 45% joueur (avec possibilité d'égalité)
+  - Images personnalisées pour chaque choix
 
-Follow these steps:
+- **Bataille (War)** (`/games/war`)
+  - Jeu de cartes 1v1 contre l'ordinateur
+  - Objectif : gagner toutes les cartes
+  - Mécanique de bataille en cas d'égalité
+  - 5 cartes par joueur au départ
+  - Avantage serveur de 55% appliqué lors de la distribution initiale
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+#### 🏆 Wager Race (`/games/wager-race`)
+- Classement mensuel des meilleurs wagers
+- Top 20 des joueurs avec leurs statistiques
+- Récompenses pour les 3 premiers (1000, 900, 850 pts)
+- Statistiques mensuelles (Total Wager, Bets du Mois, Moyenne Wager)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+#### 🎁 Giveaways (`/giveaways`)
+- Concours avec système de tickets
+- Achat de tickets avec points
+- Giveaways réservés aux affiliés (option)
+- Sélection de gagnants pondérée par le nombre de tickets
+- Possibilité de reroll pour les admins
 
-# Step 3: Install the necessary dependencies.
-npm i
+#### 🛒 Boutique (`/boutique`)
+- Échangez vos points contre des récompenses
+- Commandes gérées par les administrateurs
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+#### 🎯 Bonus Hunt (`/bonus-hunt`)
+- Système de chasse aux bonus
+- Inscription aux tirages
+- Détails des hunts avec statistiques
 
-**Edit a file directly in GitHub**
+#### 📊 Profil Utilisateur (`/profile`)
+- Affichage des points
+- Statistiques complètes :
+  - Total Wager
+  - Total Gains
+  - Win Rate
+  - Meilleur Gain
+- Historique des paris (paginé)
+- Historique des commandes (paginé)
+- Édition du pseudo Gamba (une seule fois)
+- Section codes coupons
+- Liens rapides vers les autres sections
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+#### 📝 Autres Pages
+- **Liste des Bonus** (`/bonuslist`) : Tous les bonus disponibles
+- **Vidéos** (`/videos`) : Vidéos de la communauté
+- **Communauté** (`/community`) : Page communautaire
+- **Boosters** (`/boosters`) : Système de boosters
+- **Call** (`/call`) : Système de calls
+- **Tirage** (`/tirage`) : Inscription aux tirages
+- **Jeu Responsable** (`/responsible-gaming`) : Informations sur le jeu responsable
 
-**Use GitHub Codespaces**
+### Panel d'Administration (`/admin`)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Accès réservé aux utilisateurs avec le rôle **ADMIN**.
 
-## What technologies are used for this project?
+#### 🎯 Tirage (`/admin/tirage`)
+- Gérer les inscriptions aux tirages
+- Effectuer les tirages au sort
+- Historique des gagnants
 
-This project is built with:
+#### 📝 Contenu (`/admin/content`)
+- Gérer les vidéos
+- Gérer les bonus
+- Gérer le contenu du site
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+#### 📦 Bonus Hunts (`/admin/hunts`)
+- Gérer les Bonus Hunts des joueurs
+- Supprimer des hunts
 
-## Système de Tirage
+#### 📞 Calls (`/admin/calls`)
+- Valider les calls des joueurs
+- Attribuer des points pour les calls validés
 
-Ce projet inclut un système de tirage au sort intégré. Pour l'utiliser :
+#### 🛒 Commandes (`/admin/orders`)
+- Gérer les commandes de la boutique
+- Attribuer les lots aux joueurs
+
+#### 📊 Statistiques (`/admin/stats`)
+- Voir les statistiques et analyses du site
+- Tableaux de bord détaillés
+
+#### 🏆 Wager Race (`/admin/wager-race`)
+- Suivre les mises des joueurs par mois
+- Voir le détail des paris de chaque joueur
+- Valider les récompenses mensuelles pour le top 3
+- Statut de validation des récompenses
+
+#### 🎁 Giveaways (`/admin/giveaways`)
+- Créer de nouveaux giveaways
+- Modifier les giveaways existants
+- Supprimer des giveaways
+- Sélectionner les gagnants (pondéré par tickets)
+- Reroll les gagnants
+- Configurer les giveaways réservés aux affiliés
+
+#### 👥 Information Joueurs (`/admin/roles`)
+- Voir les informations des joueurs
+- Gérer les rôles (ADMIN, AFFILIÉ)
+- Ajouter des points aux joueurs
+- Définir les points d'un joueur
+- Retirer des points aux joueurs
+- Voir les informations détaillées (email, historique de connexion, etc.)
+
+#### 🎫 Coupons Bonus (`/admin/coupons`)
+- Créer des coupons avec code, points, nombre d'utilisations max
+- Modifier les coupons existants
+- Supprimer des coupons
+- Voir les statistiques d'utilisation
+
+## 🔐 Système d'Authentification
+
+- **Discord OAuth** : Connexion via Discord
+- **Rôles** :
+  - **ADMIN** : Accès complet au panel d'administration
+  - **AFFILIÉ** : Accès aux giveaways réservés aux affiliés
+- **Profil utilisateur** : Menu déroulant avec :
+  - Points
+  - Email (flouté par défaut, possibilité de déflouter)
+  - Dernière connexion avec IP (floutée par défaut, possibilité de déflouter)
+  - Rôles assignés
+  - Lien vers le profil complet
+
+## 💰 Système de Points
+
+- Points affichés avec 2 décimales (ex: 4754.65 pts)
+- Gagnés/perdus dans les jeux
+- Utilisés pour acheter des tickets de giveaway
+- Échangeables dans la boutique
+- Gestion par les admins (ajout, définition, retrait)
+
+## 📈 Système de Wager
+
+- Tous les paris dans les mini-jeux sont trackés
+- Calcul automatique du total wager par mois
+- Classement mensuel (Wager Race)
+- Récompenses pour le top 3 chaque mois
+- Statistiques détaillées par joueur
+
+## 🎲 Système de Jeux
+
+Tous les jeux incluent :
+- Système de mise avec points
+- Historique des parties
+- Calcul automatique des gains/pertes
+- Tracking des wagers
+- Affichage "Victoire" ou "Défaite" dans l'historique
+- Statistiques intégrées au profil
+
+## 🛠️ Technologies Utilisées
+
+- **Frontend** :
+  - React 18
+  - TypeScript
+  - Vite
+  - Tailwind CSS
+  - shadcn-ui
+  - React Router
+  - Framer Motion (animations)
+  - TanStack Query
+
+- **Backend** :
+  - Node.js
+  - Express
+  - Discord OAuth2
+  - Stockage JSON (fichiers)
+
+- **Fonctionnalités** :
+  - Internationalisation (FR/EN)
+  - Responsive Design
+  - Animations fluides
+  - Gestion d'état avec React Hooks
+
+## 📦 Installation
+
+### Prérequis
+- Node.js (version 18 ou supérieure)
+- npm ou bun
 
 ### Installation des dépendances
 
@@ -90,29 +248,79 @@ Terminal 2 - Backend :
 npm run dev:server
 ```
 
-### Accès aux pages
-
-- **Page publique** : http://localhost:8080/tirage
-- **Liste des participants** : http://localhost:8080/tirage/liste
-- **API Backend** : http://localhost:3001/api
-
 ### Configuration
 
-Le mot de passe admin est défini dans `server.js` (variable `ADMIN_PASS`). Par défaut : `KafieLEPlusBo`
+1. **Variables d'environnement** :
+   - Créez un fichier `.env` à la racine du projet
+   - Configurez les variables nécessaires (Discord OAuth, etc.)
 
-Les données sont stockées dans le dossier `data/` :
-- `data.json` : Participants inscrits
-- `winners.json` : Historique des gagnants
-- `ips.json` : Gestion des IPs (blocage)
+2. **Mot de passe admin** :
+   - Défini dans `server.js` (variable `ADMIN_PASS`)
+   - Par défaut : `KafieLEPlusBo`
 
-## How can I deploy this project?
+3. **Données** :
+   - Les données sont stockées dans le dossier `data/` :
+     - `users.json` : Utilisateurs et leurs points
+     - `wagers.json` : Historique des wagers par mois
+     - `giveaways.json` : Giveaways créés
+     - `roles.json` : Rôles des utilisateurs
+     - `coupons.json` : Coupons disponibles
+     - `bonuses.json` : Bonus disponibles
+     - `videos.json` : Vidéos
+     - `hunts.json` : Bonus Hunts
+     - `orders.json` : Commandes de la boutique
 
-Simply open [Lovable](https://lovable.dev/projects/02c2bae6-7b39-4860-99fd-6dc83a370773) and click on Share -> Publish.
+### Accès aux pages
 
-## Can I connect a custom domain to my Lovable project?
+- **Frontend** : http://localhost:5173
+- **Backend API** : http://localhost:3001/api
 
-Yes, you can!
+## 🚀 Déploiement
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Le projet peut être déployé sur différentes plateformes :
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Vercel** : Déploiement automatique depuis GitHub
+- **Netlify** : Déploiement avec build automatique
+- **Railway** : Déploiement full-stack
+- **Heroku** : Déploiement classique
+
+Assurez-vous de configurer les variables d'environnement sur la plateforme de déploiement.
+
+## 📝 Structure du Projet
+
+```
+bobux-bonus-hub-main/
+├── public/              # Fichiers statiques (images, favicon)
+├── src/
+│   ├── components/     # Composants React réutilisables
+│   │   ├── games/      # Composants des jeux
+│   │   └── ui/         # Composants UI (shadcn-ui)
+│   ├── pages/          # Pages de l'application
+│   ├── hooks/          # Hooks React personnalisés
+│   ├── contexts/       # Contextes React
+│   ├── data/           # Données et traductions
+│   └── lib/            # Utilitaires
+├── server.js           # Serveur Express
+├── data/               # Fichiers JSON de stockage
+└── package.json        # Dépendances et scripts
+```
+
+## 🔧 Scripts Disponibles
+
+- `npm run dev` : Lance le serveur de développement frontend
+- `npm run dev:server` : Lance le serveur backend
+- `npm run dev:all` : Lance frontend et backend ensemble
+- `npm run build` : Build de production
+- `npm run preview` : Prévisualise le build de production
+
+## 📄 Licence
+
+Ce projet est privé et propriétaire.
+
+## 👥 Contribution
+
+Ce projet est privé. Pour toute question ou suggestion, contactez les administrateurs.
+
+---
+
+**Gamba** - Plateforme de jeux et bonus pour la communauté
