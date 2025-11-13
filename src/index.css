@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Casino premium dark theme */
+    --background: 215 100% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 215 70% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 215 70% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 158 74% 54%;
+    --primary-foreground: 215 100% 6%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 50% 15%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 158 74% 54%;
+    --accent-foreground: 215 100% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 40% 18%;
+    --input: 215 40% 18%;
+    --ring: 158 74% 54%;
+
+    --radius: 0.75rem;
+
+    /* Custom casino colors */
+    --neon-green: 158 74% 54%;
+    --electric-cyan: 190 100% 50%;
+    --deep-navy: 215 100% 6%;
+    --dark-blue: 215 70% 8%;
+    --light-blue: 210 100% 60%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 100% 6%), hsl(215 50% 10%), hsl(220 100% 5%));
+    --gradient-card: linear-gradient(135deg, hsl(215 70% 8%), hsl(215 60% 12%));
+    --gradient-green: linear-gradient(135deg, hsl(158 74% 54%), hsl(158 74% 44%));
+    --gradient-cyan: linear-gradient(135deg, hsl(190 100% 50%), hsl(190 100% 40%));
+    
+    /* Glows */
+    --glow-green: 0 0 20px hsla(158, 74%, 54%, 0.5);
+    --glow-cyan: 0 0 20px hsla(190, 100%, 50%, 0.5);
+    --glow-card: 0 0 40px hsla(158, 74%, 54%, 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: var(--glow-green);
+  }
+  
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .glow-card {
+    box-shadow: var(--glow-card);
+  }
+  
+  .glass-blur {
+    background: rgba(10, 22, 40, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-green {
+    background: var(--gradient-green);
+  }
+  
+  .gradient-cyan {
+    background: var(--gradient-cyan);
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px hsla(158, 74%, 54%, 0.4);
+    }
+    to {
+      box-shadow: 0 0 30px hsla(158, 74%, 54%, 0.8);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes cardEnter {
+    0% {
+      transform: translateY(-12px) scale(0.9);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(4px) scale(1.03);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .card-enter {
+    animation: cardEnter 0.35s ease-out;
+  }
+}
